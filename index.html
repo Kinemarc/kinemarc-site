@@ -1,507 +1,410 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Drone Defence | Laser-Based Counter-Drone Systems</title>
-  <meta name="description" content="Modular, laser-based counter-drone system that detects and neutralizes hostile drones at very low cost per engagement. Scalable protection for critical infrastructure.">
-  <meta name="keywords" content="Drone Defence, counter-drone, C-UAS, laser defense, directed energy, drone neutralization, critical infrastructure protection, Denmark">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Drone Defence ApS — BeamSentry, autonomous laser counter-UAS</title>
+<meta name="description" content="Drone Defence ApS builds BeamSentry: an autonomous laser counter-UAS effector. No ammunition, no falling debris, only light on target. Danish defence technology, matured in the AUTOSHIELD programme.">
+<meta name="keywords" content="BeamSentry, Drone Defence, counter-drone, C-UAS, laser, directed energy, AUTOSHIELD, CenSec, Denmark">
+<meta name="robots" content="index, follow">
 
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Drone Defence | Shield of Light">
-  <meta property="og:description" content="Laser-based counter-drone protection for contested airspace.">
-  <meta property="og:image" content="assets/img/brand/BG_Logo.png">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://at-dronedefence.com/">
+<meta property="og:title" content="Drone Defence ApS — BeamSentry">
+<meta property="og:description" content="An autonomous laser counter-UAS effector. No ammunition. No falling debris. Only light on target.">
+<meta property="og:image" content="https://at-dronedefence.com/assets/media/og-card.jpg">
+<meta name="twitter:card" content="summary_large_image">
 
-  <link rel="icon" type="image/png" href="assets/img/brand/BG_Logo.png">
-  <link rel="apple-touch-icon" href="assets/img/brand/BG_Logo.png">
+<link rel="icon" type="image/png" href="assets/img/brand/BG_Logo.png">
+<link rel="apple-touch-icon" href="assets/img/brand/BG_Logo.png">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-  <link rel="stylesheet" href="css/style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,400..900&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-  <!-- Navigation -->
-  <nav id="nav">
-    <div class="nav-inner">
-      <a href="#" class="nav-brand">
-        <img src="assets/img/brand/BG_Logo.png" alt="BlackGuard Logo" class="brand-logo">
-        <span class="brand-text">DRONE DEFENCE</span>
-      </a>
-      <div class="nav-links" id="navLinks">
-        <a href="#threat">Threat</a>
-        <a href="#capabilities">Capabilities</a>
-        <a href="#technology">Technology</a>
-        <a href="#team">Team</a>
-        <a href="#contact" class="nav-cta">Request a Briefing</a>
-      </div>
-      <button class="nav-toggle" id="navToggle" aria-label="Menu">
-        <i class="bi bi-list"></i>
-      </button>
-    </div>
+<div class="grain" aria-hidden="true"></div>
+<div class="reticle" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+
+<header class="nav" id="nav">
+  <a class="nav__mark" href="#top">
+    <span class="nav__glyph" aria-hidden="true"></span>
+    Drone&nbsp;Defence <small>ApS</small>
+  </a>
+  <nav class="nav__links" id="navLinks">
+    <a href="#threat">Threat</a>
+    <a href="beamsentry/">BeamSentry</a>
+    <a href="#programme">Programme</a>
+    <a href="#team">Team</a>
+    <a href="#contact">Contact</a>
   </nav>
+  <a class="nav__cta" href="#contact">Request a briefing</a>
+  <button class="nav__burger" id="navBurger" aria-label="Menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</header>
 
-  <!-- Hero Section -->
-  <section id="hero" class="hero">
-    <div class="hero-bg">
-      <div class="hero-grid"></div>
-      <div class="hero-glow"></div>
-      <div class="hero-beam"></div>
-      <div class="hero-beam-2"></div>
+<!-- ───────────────────────── HERO ───────────────────────── -->
+<section class="hero" id="top">
+  <div class="hero__plate" aria-hidden="true">
+    <video src="assets/media/sentry-loop.mp4" poster="assets/media/sentry-loop-poster.jpg"
+           autoplay muted loop playsinline preload="metadata"></video>
+  </div>
+  <div class="hero__grid" aria-hidden="true"></div>
+  <div class="hero__beam" aria-hidden="true"></div>
+
+  <div class="hero__inner">
+    <p class="eyebrow reveal">Drone Defence ApS · Aarhus, Denmark</p>
+    <h1 class="hero__title reveal" style="--d:.08s">Light instead of <em>ammunition</em></h1>
+    <p class="hero__lede reveal" style="--d:.16s">
+      We build <strong>BeamSentry</strong> — an autonomous laser counter-UAS effector that
+      detects, tracks and defeats hostile drones.<br>
+      <strong>No magazine. No falling debris. Only light on target.</strong>
+    </p>
+
+    <div class="hero__actions reveal" style="--d:.24s">
+      <a class="btn" href="beamsentry/">Explore BeamSentry</a>
+      <a class="btn btn--ghost" href="#contact">Request a briefing</a>
     </div>
-    <div class="hero-content">
-      <p class="hero-tag">COUNTER-UAS &middot; DIRECTED ENERGY</p>
-      <h1 class="hero-title">SHIELD OF LIGHT</h1>
-      <p class="hero-subtitle">Laser-based counter-drone protection<br>for contested airspace.</p>
-      <div class="hero-actions">
-        <a href="#contact" class="btn btn-primary">Request a Briefing</a>
-        <a href="#capabilities" class="btn btn-ghost">System Overview <i class="bi bi-arrow-right"></i></a>
-      </div>
-      <div class="hero-stats">
-        <div class="hero-stat">
-          <span class="hero-stat-value">&euro;1&ndash;10</span>
-          <span class="hero-stat-label">Cost per engagement</span>
-        </div>
-        <div class="hero-stat-divider"></div>
-        <div class="hero-stat">
-          <span class="hero-stat-value">&infin;</span>
-          <span class="hero-stat-label">Magazine capacity</span>
-        </div>
-        <div class="hero-stat-divider"></div>
-        <div class="hero-stat">
-          <span class="hero-stat-value">~25 kg</span>
-          <span class="hero-stat-label">System weight</span>
-        </div>
-      </div>
-    </div>
-    <div class="hero-scroll">
-      <i class="bi bi-chevron-down"></i>
-    </div>
-  </section>
 
-  <!-- Threat Section -->
-  <section id="threat" class="section">
-    <div class="container">
-      <span class="section-tag">THE THREAT</span>
-      <h2 class="section-title">The Drone Threat Is Accelerating</h2>
-      <p class="section-lead">Low-cost drones are the fastest-growing asymmetric threat to military operations and critical infrastructure. Defence costs 10&ndash;30&times; more than attack. Current countermeasures are failing.</p>
-
-      <div class="threat-grid">
-        <div class="threat-card">
-          <div class="threat-icon"><i class="bi bi-currency-euro"></i></div>
-          <h3>Defence Costs Exceed Attack</h3>
-          <p>Interceptors cost &euro;50k&ndash;500k per shot. Drones cost &euro;500. The economics are unsustainable.</p>
-        </div>
-        <div class="threat-card">
-          <div class="threat-icon"><i class="bi bi-wifi-off"></i></div>
-          <h3>Jamming Is Failing</h3>
-          <p>Autonomous and cabled drones are immune to electronic warfare. Jamming also disrupts friendly systems.</p>
-        </div>
-        <div class="threat-card">
-          <div class="threat-icon"><i class="bi bi-diagram-3"></i></div>
-          <h3>Swarms Overwhelm</h3>
-          <p>Kinetic systems have limited magazine depth. Against coordinated swarms, they run out of ammunition.</p>
-        </div>
-        <div class="threat-card">
-          <div class="threat-icon"><i class="bi bi-shield-exclamation"></i></div>
-          <h3>Civilian Risk</h3>
-          <p>Kinetic interceptors create fragments and collateral damage, making them unsuitable near civilian infrastructure.</p>
-        </div>
+    <div class="stats reveal" style="--d:.32s">
+      <div class="stat">
+        <span class="stat__num">240<span class="stat__unit">W</span></span>
+        <span class="stat__label">V1 source — drones defeated in outdoor testing</span>
       </div>
-
-      <div class="threat-quote">
-        <blockquote>
-          &ldquo;FMI considers laser-based counter-drone solutions strategically important, with growing European interest driven by their low cost per engagement and scalability against small and medium-sized UAVs.&rdquo;
-        </blockquote>
-        <cite>&mdash; Jarl Petersen, Head of Section, DALO (FMI)</cite>
+      <div class="stat">
+        <span class="stat__num">TRL 5<span class="stat__unit">→7</span></span>
+        <span class="stat__label">Maturity target through AUTOSHIELD, by Jan 2027</span>
+      </div>
+      <div class="stat">
+        <span class="stat__num">6</span>
+        <span class="stat__label">Fail-safe interlocks, none overridable in software</span>
       </div>
     </div>
-  </section>
+  </div>
 
-  <!-- Capabilities Section -->
-  <section id="capabilities" class="section section-dark">
-    <div class="container">
-      <span class="section-tag">CAPABILITIES</span>
-      <h2 class="section-title">Precision Directed Energy</h2>
-      <p class="section-lead">A modular, laser-based counter-UAS system that autonomously detects, tracks, and neutralizes hostile drones using AI-powered perception and precision optics.</p>
+  <span class="scroll-cue" aria-hidden="true"><span></span></span>
+</section>
 
-      <div class="capabilities-grid">
-        <div class="capability">
-          <div class="capability-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="32" height="32">
-              <circle cx="12" cy="12" r="3"/>
-              <line x1="12" y1="2" x2="12" y2="6"/>
-              <line x1="12" y1="18" x2="12" y2="22"/>
-              <line x1="2" y1="12" x2="6" y2="12"/>
-              <line x1="18" y1="12" x2="22" y2="12"/>
-            </svg>
-          </div>
-          <h3>No Ammunition</h3>
-          <p>Directed energy eliminates the need for kinetic interceptors. No resupply chain. No ordnance risk.</p>
-        </div>
-        <div class="capability">
-          <div class="capability-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="32" height="32">
-              <path d="M18.178 8c5.096 0 5.096 8 0 8-5.095 0-7.133-8-12.739-8-4.585 0-4.585 8 0 8 5.606 0 7.644-8 12.74-8z"/>
-            </svg>
-          </div>
-          <h3>Unlimited Capacity</h3>
-          <p>Requires only electrical power per engagement. Continuous protection without magazine limits.</p>
-        </div>
-        <div class="capability">
-          <div class="capability-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="32" height="32">
-              <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
-            </svg>
-          </div>
-          <h3>Defeats Autonomous Drones</h3>
-          <p>Effective against autonomous, cabled, and GPS-denied platforms where electronic warfare fails.</p>
-        </div>
-        <div class="capability">
-          <div class="capability-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="32" height="32">
-              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-            </svg>
-          </div>
-          <h3>Safe Near Civilians</h3>
-          <p>No fragments or collateral damage. Precision targeting with defined engagement zones and safety interlocks.</p>
-        </div>
-      </div>
+<!-- ───────────────────────── THE PROBLEM ───────────────────────── -->
+<section class="band band--statement band--dark" id="threat">
+  <div class="wrap">
+    <p class="statement reveal">
+      Defence has become more expensive than <em>attack</em>.
+    </p>
+    <div>
+      <p class="statement__sub reveal" style="--d:.08s">
+        A kinetic interceptor costs up to half a million euro per shot against a drone worth a
+        few hundred — and falling rounds rule it out anywhere near people. Jamming does not
+        touch autonomous or cabled airframes. Magazines run dry against swarms.
+      </p>
+      <p class="statement__sub reveal" style="--d:.14s; margin-top:1rem">
+        BeamSentry replaces the round with light. Cost per engagement falls to a few euro of
+        electricity, the magazine is effectively unlimited, and there is nothing to fall out
+        of the sky.
+      </p>
+    </div>
+  </div>
+</section>
 
-      <!-- Comparison Table -->
-      <div class="comparison">
-        <h3 class="comparison-title">Engagement Comparison</h3>
-        <div class="comparison-table-wrap">
-          <table class="comparison-table">
-            <thead>
-              <tr>
-                <th>Metric</th>
-                <th>Electronic Jamming</th>
-                <th>Kinetic Interceptors</th>
-                <th>Net / Capture</th>
-                <th class="highlight">Laser (Directed Energy)</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Cost per engagement</td>
-                <td>&euro;0&ndash;1,000</td>
-                <td>&euro;50k&ndash;500k+</td>
-                <td>&euro;5k&ndash;20k</td>
-                <td class="highlight">&euro;1&ndash;10 (electricity)</td>
-              </tr>
-              <tr>
-                <td>Vs autonomous / cabled</td>
-                <td class="no">No</td>
-                <td class="yes">Yes</td>
-                <td class="no">No</td>
-                <td class="highlight yes">Yes</td>
-              </tr>
-              <tr>
-                <td>Magazine capacity</td>
-                <td>Unlimited</td>
-                <td>1&ndash;10 shots</td>
-                <td>1&ndash;3 shots</td>
-                <td class="highlight">Unlimited</td>
-              </tr>
-              <tr>
-                <td>Engagement range</td>
-                <td>0.5&ndash;5 km</td>
-                <td>1&ndash;10 km</td>
-                <td>&lt;100 m</td>
-                <td class="highlight">0.2&ndash;1 km</td>
-              </tr>
-              <tr>
-                <td>Collateral damage</td>
-                <td>Low (indiscriminate)</td>
-                <td class="no">High (fragments)</td>
-                <td>Medium</td>
-                <td class="highlight yes">Very low</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+<section class="band">
+  <div class="wrap">
+    <header class="sec-head reveal">
+      <span class="sec-num">01</span>
+      <h2>Why the current answers are failing</h2>
+      <p>Small drones are the fastest-growing asymmetric threat to military operations and to
+      critical infrastructure. Every established countermeasure loses on one of four axes.</p>
+    </header>
+
+    <div class="grid-4">
+      <article class="cell reveal">
+        <span class="cell__id">01 · Economics</span>
+        <h3>Defence costs more than attack</h3>
+        <p>Interceptors run from tens to hundreds of thousands of euro per shot. The attacking
+        drone costs a few hundred. That arithmetic does not survive contact.</p>
+      </article>
+      <article class="cell reveal" style="--d:.06s">
+        <span class="cell__id">02 · Electronic warfare</span>
+        <h3>Jamming is being designed around</h3>
+        <p>Autonomous and fibre-cabled drones ignore the RF link entirely. Jamming also degrades
+        friendly communications in the same airspace.</p>
+      </article>
+      <article class="cell reveal" style="--d:.12s">
+        <span class="cell__id">03 · Depth</span>
+        <h3>Magazines run out</h3>
+        <p>Kinetic systems carry a finite number of rounds. Against a coordinated swarm, depth
+        of magazine is the whole engagement.</p>
+      </article>
+      <article class="cell reveal" style="--d:.18s">
+        <span class="cell__id">04 · Collateral</span>
+        <h3>Something always falls down</h3>
+        <p>Fragments and spent rounds make kinetic interception unusable over airports, ports,
+        energy infrastructure and crowds — exactly where drones are the problem.</p>
+      </article>
+    </div>
+
+    <div class="quote reveal">
+      <blockquote>
+        “FMI considers laser-based counter-drone solutions strategically important, with growing
+        European interest driven by their low cost per engagement and scalability against small
+        and medium-sized UAVs.”
+      </blockquote>
+      <cite>— Jarl Petersen, Head of Section, DALO (FMI)</cite>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────────────────── THE PRODUCT ───────────────────────── -->
+<section class="band band--dark" id="beamsentry">
+  <div class="wrap">
+    <header class="sec-head reveal">
+      <span class="sec-num">02</span>
+      <h2>BeamSentry</h2>
+      <p>One product line. An autonomous laser effector that closes the chain from detection to
+      engagement — and refuses to fire unless every gate agrees.</p>
+    </header>
+
+    <div class="split">
+      <figure class="plate reveal" style="margin:0">
+        <img src="assets/media/sentry-hero.jpg" alt="The BeamSentry MK1 turret on the bench: pan-tilt head with beam expander and tracking camera, marked DRONE DEFENCE · DRONE SHIELD MK1." loading="lazy">
+        <figcaption class="plate__bar"><b>MK1</b> Current build · bench <span>Aarhus, 2026</span></figcaption>
+      </figure>
+      <div class="reveal" style="--d:.08s">
+        <h3>The effector, not the whole tower</h3>
+        <p>BeamSentry is deliberately decoupled from the detection layer. It integrates with the
+        radar and RF sensors a site already runs, instead of forcing a full system replacement —
+        and carries its own electro-optical and thermal sensing for the terminal engagement.</p>
+        <ul class="ticks">
+          <li>Autonomous detection, tracking and engagement — no operator in the loop</li>
+          <li>ADS-B cross-check against manned aviation, live inside the control loop</li>
+          <li>Two-axis turret with anti-backlash drive and a Galilean beam expander</li>
+          <li>Cost per engagement measured in euro of electricity, not thousands</li>
+        </ul>
+        <p style="margin-top:1.4rem">
+          <a class="btn" href="beamsentry/">The full system →</a>
+        </p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Technology Section -->
-  <section id="technology" class="section">
-    <div class="container">
-      <span class="section-tag">TECHNOLOGY</span>
-      <h2 class="section-title">System Architecture</h2>
-      <p class="section-lead">Modular design decouples the laser effector from the detection layer, enabling independent deployment and integration with external radar or RF-based systems.</p>
+<!-- ───────────────────────── PROGRAMME ───────────────────────── -->
+<section class="band" id="programme">
+  <div class="wrap">
+    <header class="sec-head reveal">
+      <span class="sec-num">03</span>
+      <h2>AUTOSHIELD</h2>
+      <p>The system is being matured inside a funded national defence-innovation programme,
+      not in isolation.</p>
+    </header>
 
-      <div class="tech-grid">
-        <div class="tech-item">
-          <div class="tech-number">01</div>
-          <h3>Detection &amp; Tracking</h3>
-          <p>Computer vision across visual and thermal spectra provides autonomous target acquisition. Integrates with existing radar and RF detection infrastructure.</p>
-        </div>
-        <div class="tech-item">
-          <div class="tech-number">02</div>
-          <h3>Precision Optics</h3>
-          <p>Proprietary optical design and beam-shaping module enables precise energy delivery at variable distances from a portable, battery-powered system.</p>
-        </div>
-        <div class="tech-item">
-          <div class="tech-number">03</div>
-          <h3>Targeting Loop</h3>
-          <p>Real-time tracking and beam steering maintain lock on fast-moving targets. Configurable engagement zones with human-in-the-loop safety architecture.</p>
-        </div>
-        <div class="tech-item">
-          <div class="tech-number">04</div>
-          <h3>Modular Deployment</h3>
-          <p>Portable system at ~25 kg. Battery-powered with ~10 minutes engagement time per cycle. Fixed-site or mobile deployment configurations.</p>
-        </div>
+    <div class="programme">
+      <div class="programme__body reveal">
+        <p>
+          <strong>AUTOSHIELD</strong> — <em>an autonomous C-UAS engagement system for
+          manpower-saving protection of critical infrastructure and tactical units</em> — was
+          awarded through <strong>CenSec Challenges</strong> in June 2026, in a process
+          co-judged with the <strong>Danish Defence Innovation Unit (DDIU)</strong> and
+          <strong>Forsvarskommandoen</strong>.
+        </p>
+        <p>
+          The project runs from August 2026 to January 2027 as a two-partner consortium:
+          <strong>Drone Defence ApS</strong> as project lead, and
+          <strong>Aarhus University, Department of Mechanical and Production Engineering</strong>
+          as research partner — contributing multibody dynamics modelling, vibration and
+          stability analysis, and scientific verification and validation.
+        </p>
+        <p>
+          It carries two formal demonstrations and ten milestones, each with a named deliverable
+          and a date, against a requirement baseline held under configuration control. The exit
+          criterion is TRL 7.
+        </p>
       </div>
 
-      <div class="prototype-showcase">
-        <div class="prototype-image">
-          <img src="assets/img/Drone-Shield-MK1/f01dbdc2-a493-4c55-9d82-ae264d2efe73.jpeg" alt="Drone Shield MK1 prototype tracking a drone during indoor testing" loading="lazy">
-        </div>
-        <div class="prototype-text">
-          <h3>Drone Shield MK1 &mdash; Prototype</h3>
-          <p>Our first functional prototype undergoing indoor tracking tests. The system autonomously detects and tracks a hovering drone using computer vision, while the precision gimbal maintains target lock. Battery-powered and portable, the MK1 validates our core architecture: modular optics, AI-driven perception, and real-time beam steering &mdash; all integrated into a compact, field-deployable unit.</p>
-        </div>
-      </div>
+      <aside class="partners reveal" style="--d:.1s">
+        <h3>Working with</h3>
+        <ul>
+          <li><span>CenSec</span><em>Centre for Defence, Space &amp; Security — programme administrator</em></li>
+          <li><span>DDIU</span><em>Danish Defence Innovation Unit</em></li>
+          <li><span>Forsvarskommandoen</span><em>Danish Defence Command</em></li>
+          <li><span>Aarhus University · MPE</span><em>Research partner — modelling, V&amp;V</em></li>
+        </ul>
+      </aside>
+    </div>
 
-      <div class="tech-specs">
-        <div class="spec">
-          <span class="spec-label">Optical Output</span>
-          <span class="spec-value">1 kW</span>
-        </div>
-        <div class="spec">
-          <span class="spec-label">Electrical Input</span>
-          <span class="spec-value">~3 kW</span>
-        </div>
-        <div class="spec">
-          <span class="spec-label">Battery Chemistry</span>
-          <span class="spec-value">LiFePO4</span>
-        </div>
-        <div class="spec">
-          <span class="spec-label">System Weight</span>
-          <span class="spec-value">~25 kg</span>
-        </div>
-        <div class="spec">
-          <span class="spec-label">TRL</span>
-          <span class="spec-value">4&ndash;5</span>
-        </div>
-        <div class="spec">
-          <span class="spec-label">Safety Standard</span>
-          <span class="spec-value">IEC 60825</span>
-        </div>
+    <p class="funding reveal">
+      AUTOSHIELD is administered by <strong>CenSec</strong> with funding from
+      <strong>Virksomhedsudvikling Danmark</strong>, as part of CenSec's national cluster
+      grant 2025–2028.
+    </p>
+  </div>
+</section>
+
+<!-- ───────────────────────── TEAM ───────────────────────── -->
+<section class="band band--dark" id="team">
+  <div class="wrap">
+    <header class="sec-head reveal">
+      <span class="sec-num">04</span>
+      <h2>Built by engineers</h2>
+      <p>A small team that designs, builds and tests in-house — mechanics, control systems,
+      optics integration and real-time software under one roof.</p>
+    </header>
+
+    <div class="people">
+      <article class="person reveal">
+        <h3>Mathias Bøgelund Madsen</h3>
+        <span class="person__role">Chief Technology Officer</span>
+        <p>Owns the system architecture, requirement register, software and vision pipeline.
+        Mechanical engineer, and a former military aircraft mechanic at Helicopter Wing Karup.</p>
+      </article>
+      <article class="person reveal" style="--d:.06s">
+        <h3>Christian Dragkilde Moric</h3>
+        <span class="person__role">Chief Executive Officer</span>
+        <p>Commercial lead on funding and end-user relations. Robotics and control systems;
+        built the original detection, tracking and engagement software.</p>
+      </article>
+      <article class="person reveal" style="--d:.12s">
+        <h3>Thue Silberbauer Tonnesen</h3>
+        <span class="person__role">Commercial lead</span>
+        <p>Leads the commercial track and contributes mechanical design, CAD, and testing and
+        integration work. MSc Mechanical Engineering, Aarhus University.</p>
+      </article>
+      <article class="person reveal" style="--d:.18s">
+        <h3>Thomas Bjerrum</h3>
+        <span class="person__role">Business &amp; engineering advisor</span>
+        <p>Mechanical design, optics integration and thermal system development.
+        MSc Mechanical Engineering.</p>
+      </article>
+      <article class="person reveal" style="--d:.24s">
+        <h3>Benjamin Tvorup Christensen</h3>
+        <span class="person__role">Business &amp; engineering advisor</span>
+        <p>Strategy, partnerships and engineering review. MSc Mechanical Engineering.</p>
+      </article>
+    </div>
+
+    <div class="ack reveal">
+      <h3>With thanks to</h3>
+      <p>
+        <strong>Ole Balling</strong>, PhD, Professor at Aarhus University MPE — scientific,
+        modelling and test verification advisor — and <strong>Jonathan Bruun Nande</strong>,
+        MSc, Research Engineer, on the multibody model and the hardware-in-the-loop simulation
+        environment.
+      </p>
+      <p>
+        And to the teams at <strong>CenSec</strong>, the <strong>Danish Defence Innovation
+        Unit</strong> and <strong>Forsvarskommandoen</strong>, whose challenge framing and
+        continued engagement shaped what this system has to do.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────────────────── CONTACT ───────────────────────── -->
+<section class="band band--cta" id="contact">
+  <div class="wrap wrap--narrow">
+    <h2 class="reveal">Request a briefing</h2>
+    <p class="reveal" style="--d:.06s">
+      We brief qualified end users, integrators and defence stakeholders on current capability,
+      the requirement baseline and the demonstration schedule.
+    </p>
+    <a class="btn reveal" style="--d:.12s" href="mailto:contact@at-dronedefence.com?subject=BeamSentry%20—%20briefing%20request">contact@at-dronedefence.com</a>
+  </div>
+  <div class="wrap">
+    <div class="contact-rail reveal" style="--d:.18s">
+      <a href="mailto:contact@at-dronedefence.com">✉ contact@at-dronedefence.com</a>
+      <a href="tel:+4522862323">☎ +45 22 86 23 23</a>
+      <a href="https://maps.google.com/?q=Universitetsbyen+76,+8000+Aarhus+N,+Denmark" target="_blank" rel="noopener">⌖ Universitetsbyen 76, 8000 Aarhus N</a>
+      <div><span class="flag-dk"></span> Danish defence technology · NATO member state</div>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────────────────── FOOTER ───────────────────────── -->
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot__inner">
+      <div>
+        <p class="foot__co">Drone Defence ApS</p>
+        <p>CVR 46111389</p>
+        <p>Universitetsbyen 76<br>8000 Aarhus N, Denmark</p>
+        <a href="https://www.linkedin.com/company/blackguard-defence/" target="_blank" rel="noopener">LinkedIn ↗</a>
+      </div>
+      <div>
+        <h4>Navigate</h4>
+        <a href="#threat">Threat</a>
+        <a href="beamsentry/">BeamSentry</a>
+        <a href="#programme">Programme</a>
+        <a href="#team">Team</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div>
+        <h4>BeamSentry</h4>
+        <a href="beamsentry/#system">The system</a>
+        <a href="beamsentry/#safety">Safety architecture</a>
+        <a href="beamsentry/#history">Testing history</a>
+        <a href="beamsentry/#briefing">Briefing video</a>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <a href="mailto:contact@at-dronedefence.com">contact@at-dronedefence.com</a>
+        <p>Christian: +45 23 83 19 96</p>
+        <p>Benjamin: +45 22 86 23 23</p>
+        <p>Thomas: +45 42 56 88 48</p>
+        <p>Mathias: +45 22 80 93 77</p>
       </div>
     </div>
-  </section>
 
-  <!-- Market Section -->
-  <section id="market" class="section section-dark">
-    <div class="container">
-      <span class="section-tag">MARKET</span>
-      <h2 class="section-title">A Rapidly Growing Sector</h2>
-      <div class="market-grid">
-        <div class="market-stat">
-          <span class="market-value">$35&ndash;50B</span>
-          <span class="market-label">Global C-UAS market by early 2030s</span>
-        </div>
-        <div class="market-stat">
-          <span class="market-value">$5&ndash;6B</span>
-          <span class="market-label">Laser C-UAS segment by early 2030s</span>
-        </div>
-        <div class="market-stat">
-          <span class="market-value">6&times;</span>
-          <span class="market-label">Growth from $0.8B today</span>
-        </div>
-      </div>
-      <p class="section-lead" style="margin-top:2rem;">Primary customers: defence organizations, critical infrastructure operators, airports, and public security authorities. Sales through defence and security integrators with 12&ndash;24 month cycles.</p>
+    <div class="foot__legal">
+      <p>
+        AUTOSHIELD is administered by CenSec with funding from Virksomhedsudvikling Danmark,
+        as part of CenSec's national cluster grant 2025–2028.
+      </p>
+      <p>
+        © 2026 Drone Defence ApS · BeamSentry is a product of Drone Defence ApS.
+      </p>
     </div>
-  </section>
+  </div>
+</footer>
 
-  <!-- Team Section -->
-  <section id="team" class="section">
-    <div class="container">
-      <span class="section-tag">TEAM</span>
-      <h2 class="section-title">Founded by Engineers</h2>
-      <p class="section-lead">Our team combines deep expertise in robotics, mechanical engineering, control systems, optics integration, and real-time software &mdash; enabling fully in-house design and prototyping.</p>
-
-      <div class="team-grid">
-        <div class="team-member">
-          <!--<div class="member-photo">
-            <img src="assets/img/team/christian-dragkilde-tank.jpeg" alt="Christian Dragkilde" loading="lazy">
-          </div> -->
-          <h3>Christian Dragkilde</h3>
-          <span class="member-role">Co-Founder &middot; Technical Lead</span>
-          <p>Software architecture, system control, perception integration. MSc Mechanical Engineering.</p>
-          <div class="member-links">
-            <a href="tel:+4523831996" class="member-link"><i class="bi bi-phone"></i></a>
-            <a href="https://www.linkedin.com/in/christian-dragkilde-moric-2796431a8/" target="_blank" rel="noopener" class="member-link"><i class="bi bi-linkedin"></i></a>
-          </div>
-        </div>
-        <div class="team-member">
-          <!-- <div class="member-photo">
-            <img src="assets/img/team/benjamin-tvorup.png" alt="Benjamin Tvorup" loading="lazy">
-          </div> -->
-          <h3>Benjamin Tvorup</h3>
-          <span class="member-role">Co-Founder &middot; Strategy</span>
-          <p>Commercial strategy, fundraising, partnerships, and product direction. MSc Mechanical Engineering.</p>
-          <div class="member-links">
-            <a href="tel:+4522862323" class="member-link"><i class="bi bi-phone"></i></a>
-            <a href="https://www.linkedin.com/in/benjamin-tvorup-christensen-6071b2200/" target="_blank" rel="noopener" class="member-link"><i class="bi bi-linkedin"></i></a>
-          </div>
-        </div>
-        <div class="team-member">
-          <!-- <div class="member-photo">
-            <img src="assets/img/team/Thomas-Bjerrum-1.3.jpg" alt="Thomas Bjerrum" loading="lazy">
-          </div> -->
-          <h3>Thomas Bjerrum</h3>
-          <span class="member-role">Co-Founder &middot; Hardware</span>
-          <p>Mechanical design, optics integration, and thermal system development. MSc Mechanical Engineering.</p>
-          <div class="member-links">
-            <a href="tel:+4542568848" class="member-link"><i class="bi bi-phone"></i></a>
-            <a href="https://www.linkedin.com/in/twbl/" target="_blank" rel="noopener" class="member-link"><i class="bi bi-linkedin"></i></a>
-          </div>
-        </div>
-        <div class="team-member">
-          <!-- No photo supplied yet. The other three are commented out too, so
-               nothing looks out of place until photos are switched back on. -->
-          <h3>Mathias B&oslash;gelund Madsen</h3>
-          <span class="member-role">Co-Founder &middot; Lead Engineer</span>
-          <!-- UNVERIFIED PLACEHOLDER, written 2026-08-05 without a source:
-               LinkedIn returns HTTP 999 to unauthenticated reads. Deliberately
-               claims no specialism and no degree, unlike the other three, so
-               nothing here can be factually wrong about him. Replace with his
-               real focus area and education when supplied. -->
-          <p>Engineering lead across system development, from prototype build to field testing.</p>
-          <div class="member-links">
-            <a href="tel:+4522809377" class="member-link"><i class="bi bi-phone"></i></a>
-            <a href="https://www.linkedin.com/in/matbm/" target="_blank" rel="noopener" class="member-link"><i class="bi bi-linkedin"></i></a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contact" class="section section-dark">
-    <div class="container">
-      <div class="contact-block">
-        <span class="section-tag">CONTACT</span>
-        <h2 class="section-title">Request a Briefing</h2>
-        <p class="section-lead">For capability discussions, partnership inquiries, or pilot engagement opportunities.</p>
-        <div class="contact-methods">
-          <a href="mailto:contact@at-dronedefence.com" class="contact-method">
-            <i class="bi bi-envelope"></i>
-            <span>contact@at-dronedefence.com</span>
-          </a>
-          <a href="tel:+4522862323" class="contact-method">
-            <i class="bi bi-phone"></i>
-            <span>+45 22 86 23 23</span>
-          </a>
-          <a href="https://maps.google.com/?q=Universitetsbyen+76,+8000+Aarhus+N,+Denmark" target="_blank" rel="noopener" class="contact-method">
-            <i class="bi bi-geo-alt"></i>
-            <span>Aarhus, Denmark</span>
-          </a>
-        </div>
-        <div class="contact-flag">
-          <span class="flag-dk"></span>
-          <span>Danish defence technology &middot; NATO member state</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <div class="container">
-      <div class="footer-top">
-        <div class="footer-col">
-          <div class="footer-brand">
-            <img src="assets/img/brand/BG_Logo.png" alt="BlackGuard Logo" class="brand-logo">
-            <span>DRONE DEFENCE</span>
-          </div>
-          <p class="footer-about-text">Laser-based counter-drone protection for contested airspace. Danish defence technology.</p>
-          <div class="footer-social">
-            <a href="https://www.linkedin.com/company/blackguard-defence/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
-          </div>
-        </div>
-        <div class="footer-col">
-          <h4>Navigation</h4>
-          <a href="#threat">Threat</a>
-          <a href="#capabilities">Capabilities</a>
-          <a href="#technology">Technology</a>
-          <a href="#team">Team</a>
-          <a href="#contact">Contact</a>
-        </div>
-        <div class="footer-col">
-          <h4>Contact</h4>
-          <p><i class="bi bi-envelope"></i> contact@at-dronedefence.com</p>
-          <p><i class="bi bi-phone"></i> Christian: +45 23 83 19 96</p>
-          <p><i class="bi bi-phone"></i> Benjamin: +45 22 86 23 23</p>
-          <p><i class="bi bi-phone"></i> Thomas: +45 42 56 88 48</p>
-          <p><i class="bi bi-phone"></i> Mathias: +45 22 80 93 77</p>
-        </div>
-        <div class="footer-col">
-          <h4>Office</h4>
-          <a href="https://maps.google.com/?q=Universitetsbyen+76,+8000+Aarhus+N,+Denmark" target="_blank" rel="noopener">
-            <p>Universitetsbyen 76</p>
-            <p>8000 Aarhus N</p>
-            <p>Denmark</p>
-          </a>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <span>&copy; 2025 Drone Defence. All rights reserved.</span>
-        <span class="footer-flag"><span class="flag-dk"></span> Danish defence technology &middot; NATO member state</span>
-      </div>
-    </div>
-  </footer>
-
-  <script>
-    // Mobile nav toggle
-    const toggle = document.getElementById('navToggle');
-    const links = document.getElementById('navLinks');
-    toggle.addEventListener('click', () => links.classList.toggle('open'));
-
-    // Close mobile nav on link click
-    links.querySelectorAll('a').forEach(a => {
-      a.addEventListener('click', () => links.classList.remove('open'));
-    });
-
-    // Navbar background on scroll
-    const nav = document.getElementById('nav');
-    window.addEventListener('scroll', () => {
-      nav.classList.toggle('scrolled', window.scrollY > 50);
-    });
-
-    // Smooth scroll
-    document.querySelectorAll('a[href^="#"]').forEach(a => {
-      a.addEventListener('click', e => {
-        e.preventDefault();
-        const target = document.querySelector(a.getAttribute('href'));
-        if (target) {
-          const offset = 80;
-          const top = target.getBoundingClientRect().top + window.scrollY - offset;
-          window.scrollTo({ top, behavior: 'smooth' });
-        }
+<script>
+  // Staggered reveal on scroll. Respects reduced-motion.
+  (function () {
+    var els = document.querySelectorAll('.reveal, .leg');
+    if (!('IntersectionObserver' in window) ||
+        window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      els.forEach(function (el) { el.classList.add('is-in'); });
+      return;
+    }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); }
       });
-    });
+    }, { rootMargin: '0px 0px -12% 0px', threshold: 0.08 });
+    els.forEach(function (el) { io.observe(el); });
+  })();
 
-    // Fade-in on scroll
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, { threshold: 0.1 });
+  // Nav condenses after the hero; burger opens the mobile sheet.
+  (function () {
+    var nav = document.getElementById('nav');
+    var burger = document.getElementById('navBurger');
+    var onScroll = function () { nav.classList.toggle('is-stuck', window.scrollY > 80); };
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
 
-    document.querySelectorAll('.threat-card, .capability, .tech-item, .team-member, .market-stat, .spec').forEach(el => {
-      el.classList.add('fade-in');
-      observer.observe(el);
+    burger.addEventListener('click', function () {
+      var open = nav.classList.toggle('is-open');
+      burger.setAttribute('aria-expanded', open ? 'true' : 'false');
     });
-  </script>
+    document.getElementById('navLinks').addEventListener('click', function (e) {
+      if (e.target.tagName === 'A') {
+        nav.classList.remove('is-open');
+        burger.setAttribute('aria-expanded', 'false');
+      }
+    });
+  })();
+</script>
 
 </body>
 </html>

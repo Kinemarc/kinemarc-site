@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BeamSentry — autonomous laser counter-UAS | Drone Defence ApS</title>
+<meta name="description" content="BeamSentry is an autonomous laser counter-UAS effector by Drone Defence ApS: detect, classify, gate, engage. No ammunition, no falling debris, only light on target. Built and tested in Denmark, matured in the AUTOSHIELD programme.">
+<meta name="keywords" content="BeamSentry, laser counter-UAS, C-UAS, directed energy, drone defence, AUTOSHIELD, hardware-in-the-loop, ADS-B, Denmark">
+<meta name="robots" content="index, follow">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://at-dronedefence.com/beamsentry/">
+<meta property="og:title" content="BeamSentry — autonomous laser counter-UAS">
+<meta property="og:description" content="No ammunition. No falling debris. Only light on target.">
+<meta property="og:image" content="https://at-dronedefence.com/assets/media/og-card.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://at-dronedefence.com/beamsentry/">
+
+<link rel="icon" type="image/png" href="../assets/img/brand/BG_Logo.png">
+<link rel="apple-touch-icon" href="../assets/img/brand/BG_Logo.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,400..900&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<div class="grain" aria-hidden="true"></div>
+<div class="reticle" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+
+<header class="nav" id="nav">
+  <a class="nav__mark" href="../">
+    <span class="nav__glyph" aria-hidden="true"></span>
+    Drone&nbsp;Defence <small>ApS</small>
+  </a>
+  <nav class="nav__links" id="navLinks">
+    <a href="#system">System</a>
+    <a href="#safety">Safety</a>
+    <a href="#hwil">Test rig</a>
+    <a href="#history">History</a>
+    <a href="#roadmap">Roadmap</a>
+    <a href="#briefing">Briefing</a>
+    <a href="#contact" class="only-mobile">Request a briefing</a>
+  </nav>
+  <a class="nav__cta" href="#contact">Request a briefing</a>
+  <button class="nav__burger" id="navBurger" aria-label="Menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<!-- ───────────────────────── HERO ───────────────────────── -->
+<section class="hero" id="top">
+  <div class="hero__plate" aria-hidden="true">
+    <video src="../assets/media/sentry-loop.mp4" poster="../assets/media/sentry-loop-poster.jpg"
+           autoplay muted loop playsinline preload="metadata"></video>
+  </div>
+  <div class="hero__grid" aria-hidden="true"></div>
+  <div class="hero__beam" aria-hidden="true"></div>
+
+  <div class="hero__inner">
+    <p class="eyebrow reveal">The product · Drone Defence ApS</p>
+    <h1 class="hero__title hero__title--product reveal" style="--d:.08s">Beam<span>Sentry</span></h1>
+    <p class="hero__lede reveal" style="--d:.16s">
+      An autonomous laser counter-UAS effector.<br>
+      <strong>No ammunition. No falling debris. Only light on target.</strong>
+    </p>
+
+    <div class="hero__actions reveal" style="--d:.24s">
+      <a class="btn" href="#system">The system</a>
+      <a class="btn btn--ghost" href="#briefing">Watch the briefing</a>
+    </div>
+
+    <div class="stats reveal" style="--d:.32s">
+      <div class="stat">
+        <span class="stat__num">240<span class="stat__unit">W</span></span>
+        <span class="stat__label">V1 source — drones defeated in outdoor testing</span>
+      </div>
+      <div class="stat">
+        <span class="stat__num">2<span class="stat__unit">DoF</span></span>
+        <span class="stat__label">Pan/tilt turret with a Galilean beam expander</span>
+      </div>
+      <div class="stat">
+        <span class="stat__num">6</span>
+        <span class="stat__label">Fail-safe interlocks, none overridable in software</span>
+      </div>
+    </div>
+  </div>
+
+  <span class="scroll-cue" aria-hidden="true"><span></span></span>
+</section>
+
+<!-- ───────────────────────── SYSTEM ───────────────────────── -->
+<section class="band" id="system">
+  <div class="wrap">
+    <header class="sec-head reveal">
+      <span class="sec-num">01</span>
+      <h2>The kill chain, closed</h2>
+      <p>Four stages. Nothing fires without the last one agreeing to the first three.</p>
+    </header>
+
+    <ol class="chain">
+      <li class="chain__step reveal">
+        <span class="chain__idx">01</span>
+        <h3>Detect</h3>
+        <p>Layered sensing rather than a single source. Multispectral EO/IR gives visual
+        confirmation and feeds the vision pipeline; acoustic covers broken line-of-sight;
+        radar provides the long-range cue.</p>
+        <dl class="kv">
+          <div><dt>EO/IR</dt><dd>1 km · cameras in place, thermal integration underway</dd></div>
+          <div><dt>Acoustic</dt><dd>~500 m · supplier dialogue underway</dd></div>
+          <div><dt>Radar</dt><dd>10 km · external sensor, planned</dd></div>
+        </dl>
+      </li>
+      <li class="chain__step reveal" style="--d:.08s">
+        <span class="chain__idx">02</span>
+        <h3>Classify</h3>
+        <p>A computer-vision pipeline running on NVIDIA Jetson produces the track lock, with
+        latency-corrected prediction so the aim point leads the target rather than chasing it.
+        Birds are a class of their own, and a bird never reaches the controller.</p>
+      </li>
+      <li class="chain__step reveal" style="--d:.16s">
+        <span class="chain__idx">03</span>
+        <h3>Gate</h3>
+        <p>Rules of engagement sit between classification and emission. Positive hostile
+        identification and an ADS-B cross-check must <em>both</em> pass. Anything correlated
+        with manned aviation is a hard inhibit.</p>
+      </li>
+      <li class="chain__step reveal" style="--d:.24s">
+        <span class="chain__idx">04</span>
+        <h3>Engage</h3>
+        <p>A two-axis anti-backlash turret holds the beam on a moving target while a Galilean
+        expander shapes it, delivering energy density on target at range — no ammunition, no
+        fragmentation, nothing to fall down.</p>
+      </li>
+    </ol>
+
+    <p class="note reveal">
+      The effector is deliberately <strong>decoupled from the detection layer</strong>. It
+      integrates with the radar and RF sensors a site already runs, instead of forcing a full
+      system replacement.
+    </p>
+  </div>
+</section>
+
+<!-- ───────────────────────── EVIDENCE ───────────────────────── -->
+<section class="band band--dark" id="evidence">
+  <div class="wrap">
+    <header class="sec-head reveal">
+      <span class="sec-num">02</span>
+      <h2>Not a concept on paper</h2>
+      <p>The V1 turret has detected, tracked and defeated flying drones under autonomous
+      targeting on a 240 W source — including engagement of UAV targets outdoors under
+      near-realistic conditions.</p>
+    </header>
+
+    <div class="split">
+      <figure class="plate reveal" style="margin:0">
+        <img src="../assets/img/engagement-evidence.jpg" alt="Four frames from testing: the targeting overlay tracking a drone with the ADS-B panel reading no civilian aircraft detected; the laser engaging the airframe; and the resulting burn-through damage to the drone body." loading="lazy">
+        <figcaption class="plate__bar"><b>V1</b> Targeting · ADS-B clearance · effect on target</figcaption>
+      </figure>
+      <div class="reveal" style="--d:.08s">
+        <h3>Demonstrated today</h3>
+        <ul class="ticks">
+          <li>Drones defeated outdoors with a 240 W source, under autonomous targeting</li>
+          <li>AI detection and tracking in closed loop, with latency-corrected prediction</li>
+          <li>ADS-B gating against manned aviation, live in the control loop</li>
+          <li>Two-axis turret with dual-motor anti-backlash drive and beam expander</li>
+          <li>Full engagement sequences flown against a simulated sky on the real hardware</li>
+        </ul>
+        <p class="note note--tight">
+          Everything beyond this list is stated as a <strong>target</strong>, not a result.
+          Performance figures are held under configuration control as a formal requirement
+          baseline, verified by test rather than asserted, and shared under NDA with qualified
+          end users and integrators.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────────────────── SAFETY ───────────────────────── -->
+<section class="band" id="safety">
+  <div class="wrap">
+    <header class="sec-head reveal">
+      <span class="sec-num">03</span>
+      <h2>Safety is in the loop, not bolted on</h2>
+      <p>Six mandatory interlocks. Every one defaults to inhibit. None can be overridden in
+      software.</p>
+    </header>
+
+    <div class="safety">
+      <article class="safe reveal"><span class="safe__id">ADS-B loss</span><p>Emission is inhibited if ADS-B telemetry is lost, and stops within 100 ms of timeout.</p></article>
+      <article class="safe reveal" style="--d:.05s"><span class="safe__id">Hardware E-stop</span><p>Cuts laser power independently of software and works with the control computer frozen. Per EN ISO 13850.</p></article>
+      <article class="safe reveal" style="--d:.10s"><span class="safe__id">Engagement zone</span><p>Emission inhibited outside the defined azimuth/elevation zone, enforced by soft limits and hard stops.</p></article>
+      <article class="safe reveal" style="--d:.15s"><span class="safe__id">Positive ID + ADS-B</span><p>No emission against any ADS-B-correlated or unclassified track. Commercial and friendly aircraft are a hard inhibit.</p></article>
+      <article class="safe reveal" style="--d:.20s"><span class="safe__id">Elevation floor</span><p>The system never emits at or below human height. The elevation floor keeps the beam line of sight above 2 m at all ranges.</p></article>
+      <article class="safe reveal" style="--d:.25s"><span class="safe__id">No ID, no fire</span><p>Absence of hostile confirmation defaults to inhibit. Silence is never permission.</p></article>
+    </div>
+
+    <p class="note reveal">
+      Compliance is developed alongside the hardware, not after it: <strong>IEC/EN 60825-1</strong>
+      laser safety, dual-use classification under <strong>EU 2021/821</strong>, and export-control
+      assessment are built into the programme plan. On the test rig the same discipline applies —
+      a run that cannot calibrate is not allowed to start, and every run ends with a verified
+      return to a known home position.
+    </p>
+  </div>
+</section>
+
+<!-- ───────────────────────── HWIL ───────────────────────── -->
+<section class="band band--dark" id="hwil">
+  <div class="wrap">
+    <header class="sec-head reveal">
+      <span class="sec-num">04</span>
+      <h2>We fly the sky, not the spreadsheet</h2>
+      <p>Live-fire testing against real drones is slow, weather-bound and expensive. So the
+      turret flies thousands of engagements a week against a simulated sky — on the real
+      hardware, in real time.</p>
+    </header>
+
+    <figure class="plate reveal" style="margin:0 0 2rem">
+      <video src="../assets/media/hwil.mp4" poster="../assets/media/hwil-poster.jpg"
+             controls muted loop playsinline preload="none"></video>
+      <figcaption class="plate__bar">
+        <b>HWIL</b> Hardware-in-the-loop · the real turret tracking a simulated target
+        <span>Recorded on the bench, Aarhus</span>
+      </figcaption>
+    </figure>
+
+    <div class="grid-3">
+      <article class="cell reveal">
+        <span class="cell__id">Method</span>
+        <h3>A world rendered once</h3>
+        <p>The background sky and terrain are rendered as a single high-resolution panorama with
+        per-pixel depth. At runtime the turret's own measured pose selects the view, and the
+        target is composited at its true angles — so it disappears behind a treeline exactly
+        as it would in the field.</p>
+      </article>
+      <article class="cell reveal" style="--d:.06s">
+        <span class="cell__id">Fidelity</span>
+        <h3>Real motors, real time</h3>
+        <p>Time runs 1:1 and the turret physically moves itself. The recording shows the actual
+        machine's jitter, lag and overshoot — not an idealised model of them. Detection runs on
+        the synthetic sensor image; the control loop drives real hardware.</p>
+      </article>
+      <article class="cell reveal" style="--d:.12s">
+        <span class="cell__id">Purpose</span>
+        <h3>Failure, on purpose</h3>
+        <p>The rig exists to break the system safely: stalled sensors, lost serial bytes,
+        blinding sun, uncalibrated starts. Every failure found on the bench becomes an interlock
+        the field system cannot talk its way past.</p>
+      </article>
+    </div>
+
+    <p class="note reveal">
+      The synthetic imagery is also the training set. A Blender-based pipeline generates
+      labelled visible and thermal footage of drones and birds against varied terrain, weather
+      and time of day; detectors trained on it are exported to the turret's onboard Jetson.
+      <strong>The same simulation that trains the machine is the one that tests it.</strong>
+    </p>
+  </div>
+</section>
+
+<!-- ───────────────────────── HISTORY ───────────────────────── -->
+<section class="band" id="history">
+  <div class="wrap">
+    <header class="sec-head reveal">
+      <span class="sec-num">05</span>
+      <h2>How it got here</h2>
+      <p>Each iteration answered one question and exposed the next. Nothing on this line is a
+      plan — it either happened, or it is marked as ahead of us.</p>
+    </header>
+
+    <div class="track">
+      <article class="leg">
+        <span class="leg__when">December 2025</span>
+        <h3>Drone Defence ApS founded</h3>
+        <p>Founded in Aarhus by four mechanical engineers around a single conviction: the
+        economics of drone defence only close if the round is replaced by light. Awarded a
+        mikrolegat by Fonden for Entreprenørskab in the same month.</p>
+      </article>
+
+      <article class="leg">
+        <span class="leg__when">Early 2026</span>
+        <h3>Drone Shield MK1 — the first turret</h3>
+        <p>A two-axis pan/tilt platform, an optical bench with a Galilean beam expander, and a
+        camera-based tracker. Portable, battery-powered, built in-house. The first question it
+        answered: can a self-built turret hold a lock on a hovering drone at all?</p>
+        <figure class="plate">
+          <img src="../assets/img/turret-mk1.jpg" alt="The Drone Shield MK1 turret: the built pan-tilt platform with beam expander, shown beside the optical assembly and the CAD model it was designed from." loading="lazy">
+          <figcaption class="plate__bar"><b>MK1</b> The build, and the CAD it came from</figcaption>
+        </figure>
+      </article>
+
+      <article class="leg">
+        <span class="leg__when">Spring 2026</span>
+        <h3>Autonomy and the first gate</h3>
+        <p>Detection and tracking closed the loop without an operator, with latency-corrected
+        prediction so the aim point leads the target. The first safety gate went in at the same
+        time: an ADS-B cross-check that inhibits emission on anything correlated with manned
+        aviation. Autonomy and refusal-to-fire were built together, not in that order.</p>
+        <figure class="plate">
+          <img src="../assets/img/tracking-test.jpg" alt="The turret indoors on a stand, holding track on a small quadcopter hovering across the hall, with a portable battery unit connected by a yellow fibre." loading="lazy">
+          <figcaption class="plate__bar"><b>Tracking</b> Holding lock on a hovering target <span>Aarhus</span></figcaption>
+        </figure>
+      </article>
+
+      <article class="leg">
+        <span class="leg__when">2026</span>
+        <h3>V1 — 240 W, outdoors, on flying targets</h3>
+        <p>The V1 source engaged UAV targets outdoors under near-realistic conditions and
+        defeated them under autonomous targeting: acquisition, ADS-B clearance, lock, burn-through.
+        This is the demonstration the whole programme is built on.</p>
+        <span class="leg__tag"><a href="#evidence" style="text-decoration:none">See the engagement sequence ↑</a></span>
+      </article>
+
+      <article class="leg">
+        <span class="leg__when">June 2026</span>
+        <h3>AUTOSHIELD awarded</h3>
+        <p>Selected through CenSec Challenges round 2, in a process co-judged with the Danish
+        Defence Innovation Unit and Forsvarskommandoen. The award turned a prototype into a
+        programme: 30 requirements under configuration control, ten milestones, two formal
+        demonstrations, and Aarhus University MPE as research partner.</p>
+        <span class="leg__tag">Programme start 1 Aug 2026</span>
+      </article>
+
+      <article class="leg">
+        <span class="leg__when">August 2026</span>
+        <h3>Out of the workshop</h3>
+        <p>Kick-off with DDIU and Forsvarskommandoen on 17 August set the requirement baseline
+        and the demonstration schedule. Days later the turret ran at DALO Industry Days, where
+        the conversations that matter for a defence product actually start — platform
+        integrators, procurement, end users.</p>
+      </article>
+
+      <article class="leg">
+        <span class="leg__when">August 2026</span>
+        <h3>A synthetic training ground</h3>
+        <p>Real counter-drone imagery is scarce, and the awkward cases — a bird at range, a drone
+        against a treeline, a thermal signature at dusk — are scarcest of all. So we build them:
+        a rendering pipeline that produces labelled visible and thermal footage by the thousand,
+        with the sensor's own noise and blur modelled on the cameras we actually fly.</p>
+      </article>
+
+      <article class="leg">
+        <span class="leg__when">August–September 2026</span>
+        <h3>Hardware-in-the-loop — the rig that argues back</h3>
+        <p>The turret now flies full engagements against that synthetic sky on real motors, in
+        real time, with every run starting from a verified calibration and ending at a verified
+        home position. It has already found faults no desk review would have: a stalled sensor
+        that makes a moving turret look stationary, a sign convention that steered away from the
+        target, a serial protocol that silently drops commands. Each one is now an interlock.</p>
+        <span class="leg__tag"><a href="#hwil" style="text-decoration:none">Watch the rig run ↑</a></span>
+      </article>
+
+      <article class="leg leg--ahead">
+        <span class="leg__when">Ahead · through January 2027</span>
+        <h3>3 kW and TRL 7</h3>
+        <p>Integration of the 3 kW source and a beam expander re-sized for its optical path; a
+        validated structural-dynamic model with Aarhus University; formalised rules of engagement
+        and fail-safe logic; latency optimisation; and a drive train that can follow a fast
+        crossing target rather than merely see it. Two formal demonstrations, the second at an
+        end user. Exit criterion: TRL 7 against the acceptance baseline.</p>
+        <span class="leg__tag">AUTOSHIELD M1–M10</span>
+      </article>
+
+      <article class="leg leg--ahead">
+        <span class="leg__when">Ahead · architected for</span>
+        <h3>10 kW, and onto other people's platforms</h3>
+        <p>The optical chain and control architecture are designed to scale toward a 10 kW
+        effector — the class platform integrators are asking for. The long-term shape of the
+        product is not a tower we sell alone, but an effector that drops into the gimbals,
+        vehicles and sites our customers already operate.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────────────────── ROADMAP ───────────────────────── -->
+<section class="band band--dark" id="roadmap">
+  <div class="wrap">
+    <header class="sec-head reveal">
+      <span class="sec-num">06</span>
+      <h2>One architecture, scaled deliberately</h2>
+      <p>Each step is tied to a demonstration rather than a projection.</p>
+    </header>
+
+    <div class="grid-3">
+      <article class="cell reveal">
+        <span class="cell__id">Demonstrated</span>
+        <h3>240 W · V1</h3>
+        <p>Full detect-to-engage chain proven outdoors against flying targets. Autonomous
+        targeting, ADS-B gating, closed-loop tracking on real hardware.</p>
+      </article>
+      <article class="cell reveal" style="--d:.06s">
+        <span class="cell__id">In progress · Aug 2026 – Jan 2027</span>
+        <h3>3 kW · AUTOSHIELD</h3>
+        <p>Source integration, validated structural-dynamic model, formalised ROE and fail-safe
+        logic, latency optimisation, and an operational demonstration at an end user.
+        Exit criterion is TRL 7.</p>
+      </article>
+      <article class="cell reveal" style="--d:.12s">
+        <span class="cell__id">Architected for</span>
+        <h3>10 kW · fielded variant</h3>
+        <p>The optical chain and control architecture are designed to scale toward a 10 kW
+        effector — the class integrators are asking for on high-precision platforms.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────────────────── BRIEFING VIDEO ───────────────────────── -->
+<section class="band" id="briefing">
+  <div class="wrap">
+    <header class="sec-head reveal">
+      <span class="sec-num">07</span>
+      <h2>Two and a half minutes, from the people building it</h2>
+      <p>Mathias and Thue on the problem, the system, what the rig has shown, and what comes
+      next. Danish, 2:29.</p>
+    </header>
+
+    <figure class="plate reveal" style="margin:0">
+      <video src="../assets/media/briefing.mp4" poster="../assets/media/briefing-poster.jpg"
+             controls playsinline preload="none"></video>
+      <figcaption class="plate__bar">
+        <b>Briefing</b> Recorded 31 August 2026 · in Danish
+        <span>Drone Defence ApS</span>
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ───────────────────────── PROGRAMME ───────────────────────── -->
+<section class="band band--dark" id="programme">
+  <div class="wrap">
+    <header class="sec-head reveal">
+      <span class="sec-num">08</span>
+      <h2>AUTOSHIELD</h2>
+      <p>BeamSentry is being matured inside a funded national defence-innovation programme,
+      not in isolation.</p>
+    </header>
+
+    <div class="programme">
+      <div class="programme__body reveal">
+        <p>
+          <strong>AUTOSHIELD</strong> — <em>an autonomous C-UAS engagement system for
+          manpower-saving protection of critical infrastructure and tactical units</em> — was
+          awarded through <strong>CenSec Challenges</strong> in June 2026, in a process
+          co-judged with the <strong>Danish Defence Innovation Unit (DDIU)</strong> and
+          <strong>Forsvarskommandoen</strong>.
+        </p>
+        <p>
+          The project runs from August 2026 to January 2027 as a two-partner consortium:
+          <strong>Drone Defence ApS</strong> as project lead, and
+          <strong>Aarhus University, Department of Mechanical and Production Engineering</strong>
+          as research partner — contributing multibody dynamics modelling, vibration and
+          stability analysis, and scientific verification and validation.
+        </p>
+        <p>
+          It carries two formal demonstrations and ten milestones, each with a named deliverable
+          and a date.
+        </p>
+      </div>
+
+      <aside class="partners reveal" style="--d:.1s">
+        <h3>Working with</h3>
+        <ul>
+          <li><span>CenSec</span><em>Centre for Defence, Space &amp; Security — programme administrator</em></li>
+          <li><span>DDIU</span><em>Danish Defence Innovation Unit</em></li>
+          <li><span>Forsvarskommandoen</span><em>Danish Defence Command</em></li>
+          <li><span>Aarhus University · MPE</span><em>Research partner — modelling, V&amp;V</em></li>
+        </ul>
+      </aside>
+    </div>
+
+    <p class="funding reveal">
+      AUTOSHIELD is administered by <strong>CenSec</strong> with funding from
+      <strong>Virksomhedsudvikling Danmark</strong>, as part of CenSec's national cluster
+      grant 2025–2028.
+    </p>
+  </div>
+</section>
+
+<!-- ───────────────────────── CONTACT ───────────────────────── -->
+<section class="band band--cta" id="contact">
+  <div class="wrap wrap--narrow">
+    <h2 class="reveal">Request a briefing</h2>
+    <p class="reveal" style="--d:.06s">
+      We brief qualified end users, integrators and defence stakeholders on current capability,
+      the requirement baseline and the demonstration schedule.
+    </p>
+    <a class="btn reveal" style="--d:.12s" href="mailto:contact@at-dronedefence.com?subject=BeamSentry%20—%20briefing%20request">contact@at-dronedefence.com</a>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot__inner">
+      <div>
+        <p class="foot__co">Drone Defence ApS</p>
+        <p>CVR 46111389</p>
+        <p>Universitetsbyen 76<br>8000 Aarhus N, Denmark</p>
+        <a href="../">← Company site</a>
+      </div>
+      <div>
+        <h4>BeamSentry</h4>
+        <a href="#system">The system</a>
+        <a href="#safety">Safety architecture</a>
+        <a href="#hwil">Test rig</a>
+        <a href="#history">History</a>
+        <a href="#roadmap">Roadmap</a>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <a href="mailto:contact@at-dronedefence.com">contact@at-dronedefence.com</a>
+        <a href="tel:+4522862323">+45 22 86 23 23</a>
+        <a href="https://www.linkedin.com/company/blackguard-defence/" target="_blank" rel="noopener">LinkedIn ↗</a>
+      </div>
+    </div>
+
+    <div class="foot__legal">
+      <p>
+        AUTOSHIELD is administered by CenSec with funding from Virksomhedsudvikling Danmark,
+        as part of CenSec's national cluster grant 2025–2028.
+      </p>
+      <p>
+        © 2026 Drone Defence ApS · BeamSentry is a product of Drone Defence ApS.
+      </p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var els = document.querySelectorAll('.reveal, .leg');
+    if (!('IntersectionObserver' in window) ||
+        window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      els.forEach(function (el) { el.classList.add('is-in'); });
+      return;
+    }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); }
+      });
+    }, { rootMargin: '0px 0px -12% 0px', threshold: 0.08 });
+    els.forEach(function (el) { io.observe(el); });
+  })();
+
+  (function () {
+    var nav = document.getElementById('nav');
+    var burger = document.getElementById('navBurger');
+    var onScroll = function () { nav.classList.toggle('is-stuck', window.scrollY > 80); };
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    burger.addEventListener('click', function () {
+      var open = nav.classList.toggle('is-open');
+      burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    document.getElementById('navLinks').addEventListener('click', function (e) {
+      if (e.target.tagName === 'A') {
+        nav.classList.remove('is-open');
+        burger.setAttribute('aria-expanded', 'false');
+      }
+    });
+  })();
+
+  // Only one video decodes at a time: pause any playing <video> when another starts.
+  (function () {
+    var vids = document.querySelectorAll('video[controls]');
+    vids.forEach(function (v) {
+      v.addEventListener('play', function () {
+        vids.forEach(function (o) { if (o !== v) { o.pause(); } });
+      });
+    });
+  })();
+</script>
+
+</body>
+</html>
