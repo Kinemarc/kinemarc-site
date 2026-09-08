@@ -1,9 +1,9 @@
 /* ============================================================
-   Drone Defence ApS — at-dronedefence.com
+   Kinemarc — kinemarc.com
    Shared stylesheet for the company page and /beamsentry.
 
-   Aesthetic: precision instrument. Near-black ground, one hot
-   optical amber, sensor cyan used sparingly, engineered type,
+   Aesthetic: precision instrument. Near-black ground, one
+   Kinemarc green (from the logo), sensor cyan used sparingly, engineered type,
    measured motion. Nothing decorative that isn't load-bearing.
 
    Extends the language established on the BeamSentry product
@@ -20,9 +20,9 @@
   --paper-dim:  #9aa3b2;
   --paper-mute: #6b7484;
 
-  --beam:       #ffb320;
-  --beam-hot:   #ffd166;
-  --beam-deep:  #c47f00;
+  --beam:       #3fbf8a;   /* Kinemarc green — logo K */
+  --beam-hot:   #6fe2ad;   /* logo glow */
+  --beam-deep:  #1f7a58;
   --sensor:     #5fd4d6;
 
   --f-display: 'Archivo', 'Helvetica Neue', Arial, sans-serif;
@@ -71,7 +71,7 @@ a { color: inherit; }
 }
 .reticle span {
   position: absolute; width: 26px; height: 26px;
-  border: 1px solid rgba(255,179,32,.34);
+  border: 1px solid rgba(63,191,138,.34);
 }
 .reticle span:nth-child(1) { top: 0;    left: 0;    border-right: 0; border-bottom: 0; }
 .reticle span:nth-child(2) { top: 0;    right: 0;   border-left: 0;  border-bottom: 0; }
@@ -113,8 +113,10 @@ a { color: inherit; }
 .nav__glyph {
   width: 11px; height: 11px; border-radius: 50%;
   background: var(--beam); flex: none;
-  box-shadow: 0 0 0 3px rgba(255,179,32,.16), 0 0 18px 2px rgba(255,179,32,.55);
+  box-shadow: 0 0 0 3px rgba(63,191,138,.16), 0 0 18px 2px rgba(63,191,138,.55);
 }
+.nav__logo { height: 34px; width: auto; display: block; }
+.nav.is-stuck .nav__logo { height: 30px; }
 .nav__mark small {
   font-family: var(--f-mono); font-size: .62rem; letter-spacing: .16em;
   color: var(--paper-mute); font-weight: 400; margin-left: .1rem;
@@ -167,7 +169,7 @@ a { color: inherit; }
   display: grid; align-content: center;
   overflow: hidden;
   background:
-    radial-gradient(120% 90% at 78% 12%, rgba(255,179,32,.11), transparent 58%),
+    radial-gradient(120% 90% at 78% 12%, rgba(63,191,138,.11), transparent 58%),
     radial-gradient(70% 60% at 8% 88%, rgba(95,212,214,.06), transparent 60%),
     var(--ink);
 }
@@ -195,7 +197,7 @@ a { color: inherit; }
 }
 .hero__beam {
   position: absolute; top: -12%; right: 14%; width: 1px; height: 128%;
-  background: linear-gradient(180deg, transparent, rgba(255,179,32,.55), transparent);
+  background: linear-gradient(180deg, transparent, rgba(63,191,138,.55), transparent);
   filter: blur(.6px);
   animation: sweep 11s var(--ease) infinite;
 }
@@ -241,7 +243,7 @@ a { color: inherit; }
   background: var(--beam); color: var(--ink); font-weight: 600;
   transition: background .25s ease, box-shadow .25s ease, transform .25s ease;
 }
-.btn:hover { background: var(--beam-hot); box-shadow: 0 0 34px rgba(255,179,32,.3); transform: translateY(-1px); }
+.btn:hover { background: var(--beam-hot); box-shadow: 0 0 34px rgba(63,191,138,.3); transform: translateY(-1px); }
 .btn--ghost { background: none; color: var(--paper); border-color: var(--line); }
 .btn--ghost:hover { background: none; border-color: var(--beam); color: var(--beam); box-shadow: none; }
 
@@ -280,7 +282,7 @@ a { color: inherit; }
 .band--tight { padding-block: clamp(3rem, 7vh, 5rem); }
 .band--cta {
   background:
-    radial-gradient(75% 130% at 50% 0%, rgba(255,179,32,.13), transparent 62%),
+    radial-gradient(75% 130% at 50% 0%, rgba(63,191,138,.13), transparent 62%),
     var(--ink-2);
   border-top: 1px solid var(--line-soft);
   text-align: center;
@@ -390,7 +392,7 @@ a { color: inherit; }
 }
 .ticks li::before {
   content: ''; position: absolute; left: 0; top: .52em;
-  width: 8px; height: 8px; border: 1px solid var(--beam); background: rgba(255,179,32,.22);
+  width: 8px; height: 8px; border: 1px solid var(--beam); background: rgba(63,191,138,.22);
 }
 .dashes li::before {
   content: ''; position: absolute; left: 0; top: .82em;
@@ -422,9 +424,9 @@ a { color: inherit; }
   background: var(--ink); border-radius: 50%;
   transition: box-shadow .5s ease, background .5s ease, border-color .5s ease;
 }
-.leg.is-in::before { background: var(--beam); border-color: var(--beam); box-shadow: 0 0 0 4px rgba(255,179,32,.14), 0 0 20px rgba(255,179,32,.5); }
+.leg.is-in::before { background: var(--beam); border-color: var(--beam); box-shadow: 0 0 0 4px rgba(63,191,138,.14), 0 0 20px rgba(63,191,138,.5); }
 .leg--ahead::before { border-style: dashed; }
-.leg.leg--ahead.is-in::before { background: var(--ink); box-shadow: 0 0 0 4px rgba(255,179,32,.08); }
+.leg.leg--ahead.is-in::before { background: var(--ink); box-shadow: 0 0 0 4px rgba(63,191,138,.08); }
 .leg__when {
   font-family: var(--f-mono); font-size: .71rem; letter-spacing: .15em;
   text-transform: uppercase; color: var(--beam); display: block; margin-bottom: .5rem;
